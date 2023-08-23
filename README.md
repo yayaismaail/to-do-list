@@ -49,9 +49,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[The project was built using webpack]**
-- **[It was also built using ES6]**
-- **[Modules were imported/exported for the JavaScript]**
+- **[Use webpack to bundle JavaScript]**
+- **[Learn how to use proper ES6 syntax]**
+- **[Use ES6 modules to write modular JavaScript]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -133,8 +133,6 @@ You can deploy this project using:
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-
-> Describe 1 - 3 features you will add to the project.
 
 - [ ] **[Add and Remve Button]**
 - [ ] **[Interractive List]**
