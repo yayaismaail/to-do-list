@@ -148,3 +148,12 @@ ol {
 .clear-completed {
   opacity: 0.5;
 }
+
+.clear-completed {
+  color: rgb(116, 116, 116);
+}
+
+.clear-completed:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
