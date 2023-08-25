@@ -146,11 +146,8 @@ ol {
 }
 
 .clear-completed {
-  opacity: 0.5;
-}
-
-.clear-completed {
   color: rgb(116, 116, 116);
+  opacity: 0.5;
 }
 
 .clear-completed:hover {
