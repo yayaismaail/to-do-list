@@ -6,15 +6,12 @@ body {
   box-sizing: border-box;
 }
 
-.ash {
+.ash-color {
   color: rgb(170, 170, 170);
 }
 
-.black {
+.head {
   color: rgb(43, 43, 43);
-}
-
-.heading {
   font-size: 1.2em;
 }
 
@@ -26,7 +23,7 @@ body {
   width: 100%;
 }
 
-.input-sec {
+.section1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
