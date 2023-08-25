@@ -15,7 +15,7 @@ sortedTodoList.forEach((todo) => {
   const task = document.createElement('li');
   task.classList.add('task');
   task.id = todo.index;
-  task.innerHTML = `<input type="checkbox" name="${todo.index}" class="check">
+  task.innerHTML = `<input type="checkbox" ${todo.completed && 'checked="true"'} name="${todo.index}" class="check">
   <label class = "${todo.index} task-desc black" for="${todo.index}">${todo.description}</label>
   <div class="remove-button">
     <i class='fa fa-trash ash'></i>
