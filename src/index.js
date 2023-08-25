@@ -18,7 +18,7 @@ sortedTodoList.forEach((todo) => {
   task.innerHTML = `<input type="checkbox" name="${todo.index}" class="check">
   <label class = "${todo.index} task-desc black" for="${todo.index}">${todo.description}</label>
   <div class="remove-button">
-    <i class='fa fa-trash ash'></i>
+    <i class='fa fa-trash ash-color'></i>
   <div>`;
   todoItems.appendChild(task);
 });
