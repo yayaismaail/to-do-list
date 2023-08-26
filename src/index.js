@@ -1,6 +1,6 @@
 import './style.css';
-// eslint-disable-next-line import/no-unresolved
 import TodoList from './modules/todo.js';
+import toggleStatus from './modules/clear.js';
 
 let todolist = [];
 if (JSON.parse(localStorage.getItem('todolist'))) {
@@ -15,10 +15,10 @@ sortedTodoList.forEach((todo) => {
   const task = document.createElement('li');
   task.classList.add('task');
   task.id = todo.index;
-  task.innerHTML = `<input type="checkbox" name="${todo.index}" class="check">
+  task.innerHTML = `<input type="checkbox" ${todo.completed && 'checked="true"'} name="${todo.index}" class="check">
   <label class = "${todo.index} task-desc black" for="${todo.index}">${todo.description}</label>
   <div class="remove-button">
-    <i class='fa fa-trash ash-color'></i>
+    <i class='fa fa-trash ash'></i>
   <div>`;
   todoItems.appendChild(task);
 });
@@ -76,3 +76,32 @@ const removeTask = (e) => {
 };
 
 removeButton.forEach((element) => element.addEventListener('click', removeTask));
+
+const checkBox = (e) => {
+  const i = e.target.name;
+  const task = newTodoList.getTaskByIndex(i);
+  toggleStatus(task);
+  newTodoList.todolist[i - 1] = task;
+  localStorage.setItem('todolist', JSON.stringify(newTodoList));
+};
+
+const tasks = document.querySelectorAll('.task');
+tasks.forEach((e) => {
+  const checkInput = e.childNodes[0];
+  checkInput.addEventListener('change', checkBox);
+});
+
+const clearButton = document.getElementsByClassName('link-button')[0];
+
+const clearCompleted = () => {
+  const filteredList = newTodoList.todolist.filter((e) => e.completed === false);
+  const sortedList = filteredList.map((object, i) => {
+    const index = i + 1;
+    return { ...object, index };
+  });
+  newTodoList.todolist = sortedList;
+  localStorage.setItem('todolist', JSON.stringify(newTodoList));
+  window.location.reload();
+};
+
+clearButton.addEventListener('click', clearCompleted);
